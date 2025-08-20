@@ -1,0 +1,343 @@
+body {
+    background: #eee;
+    margin: 0 auto;
+}
+
+.body_container {
+    max-width: 760px;
+    margin: 0px auto;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0px;
+}
+
+/* --- Form共通 --- */
+
+.form_input label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 5px 0 0;
+}
+
+.form_input input {
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.form_buttons {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+div.error_message {
+    color: red;
+    margin: 20px 0;
+}
+
+div.error_message ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.form_input p {
+    color: red;
+    margin-top: 0;
+    padding-top: 5px;
+}
+
+/* --- ログイン/ユーザー登録 --- */
+
+.login_container, .register_container {
+    max-width: 350px;
+    margin: 20px auto;
+    padding: 50px;
+    background: #fafafa;
+    border-radius: 5px;
+}
+
+.login_button, .register_button {
+    font-size: 18px;
+    width: 100%;
+    margin-top: 15px;
+    padding: 8px 0;
+    background-color: #516c5e;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;  
+}
+
+.login_container a {
+    display: block;
+    text-align: center;
+}
+
+/* --- 収支一覧 --- */
+
+.create_button button {
+    width: 100px;
+    padding: 5px;
+    font-size: 18px;
+    
+    background-color: #516c5e;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;      
+}
+
+/* --- 収支一覧の検索条件 --- */
+
+.filter_area {
+    max-width: 500px;
+    margin-top: 20px;
+    padding: 20px;
+    background: #fafafa;
+    border-radius: 5px;
+    display: flex;
+}
+
+.filter_area p {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.condition label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.condition {
+    float: left;
+    padding: 5px;
+}
+
+.condition label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.condition label span {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.condition select {
+    font-size: 16px;
+    display: block;
+    max-height: 110px;        
+    width: 130px;
+    padding: 5px;
+}
+
+.condition button {
+    width: 100px;
+    font-size: 16px;    
+    padding: 5px;   
+    background-color: #96c2ab; 
+    cursor: pointer;
+    border-style: none;
+    border-radius: 5px;
+}
+
+/* --- 収支一覧の合計テーブル --- */
+
+.total_table, .total_table th, .total_table td {
+    margin: 20px 0px;
+    padding: 5px;
+    border: 1px solid #516c5e;
+    border-collapse: collapse;
+}
+
+.total_table th {
+    width: 160px;    
+    background-color: #516c5e;
+    color: #fff;
+    font-weight: normal;
+    text-align: center;    
+}
+
+.total_table td {
+    width: 100px;    
+    background-color: #fff;
+    text-align: right;
+}
+
+/* --- 収支一覧の収支リスト --- */
+
+.list_table, .list_table th, .list_table td {
+    margin: 20px 0px;
+    padding: 5px;
+    border: 1px solid #516c5e;
+    border-collapse: collapse;
+}
+
+.list_table th {
+    width: 100px;    
+    background-color: #516c5e;
+    color: #fff;
+    font-weight: normal;
+    text-align: center;    
+}
+
+.list_table td {
+    font-size: 14px;
+    background-color: #fff;
+    text-align: center;   
+}
+
+th.note_field {
+    width: 160px;
+}
+
+td.note_field {
+    text-align: left;
+    padding-left: 5px;
+}
+
+th.edit_field {
+    width: 35px;
+}
+
+img.edit_icon {
+    width: 29px;
+    padding: 3px;
+}
+
+/* --- 収支登録/編集 --- */
+
+.transaction_container {
+    max-width: 400px;
+    margin: 20px auto;
+    font-size: 16px;
+    padding: 50px;
+    background: #fafafa;
+    border-radius: 5px;
+}
+
+.transaction_form label{
+    display: block;
+    margin-top: 5px;
+}
+
+.transaction_form input, .transaction_form select {
+    width: 100%;
+    padding: 5px;
+}
+
+.amount_container {
+    display: flex;
+    align-items: center;
+    height: 35px;
+}
+
+.amount_container label {
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+input.amount {
+    width: 250px;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+input.income {
+    width: 25px;
+    height: 25px;
+}
+
+input.create_button, input.save_button {
+    background-color: #516c5e;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 10px;
+    width: 40%;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button.cancel_button {
+    width: 40%;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+button.delete_button {
+    margin-top: 10px;
+    padding: 5px 15px;
+    border: none;
+    background-color: red;
+    color:#fff;
+    float: right;
+    border-radius: 5px;
+}
+
+
+/* --- snackbar/header/footer --- */
+
+.snackbar {
+    position: fixed; 
+    top: 60px; 
+    right: 10px;
+    transform: translate(0, 0);
+    max-width: min(560px, calc(100vw - 32px));
+    background: #96c2ab; 
+    padding: 10px;
+    border-radius: 3px;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 9999;
+}
+.snackbar.show {
+    opacity: 1;
+    transform: translate(-30%, 0); 
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .snackbar{ transition: none; } 
+}
+
+header {    
+    height: 50px;
+    width: 100%;
+    background-color: #516c5e;
+}
+
+header .container {
+    height: 50px;
+    max-width: 700px;
+    line-height: 50px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.header-title {
+    font-size: 22px;
+    float: left;
+    line-height: 50px;
+}
+
+.header-right {
+    float: right;
+    display: block;
+}
+
+.header-right a {
+    color: #fff;
+}
+
+footer {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 50px;
+    font-size: 10px;
+    text-align: center;
+}
