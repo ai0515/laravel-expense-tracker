@@ -65,3 +65,7 @@ php artisan serve
 
 #### 新規登録画面
 <img src="docs/images/create.png" width="600px">
+
+## 資料
+* [画面遷移図](docs/images/screen_transition_diagram.png)
+* [ER図](docs/images/ERD.png)
