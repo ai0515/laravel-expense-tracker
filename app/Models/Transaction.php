@@ -17,16 +17,6 @@ class Transaction extends Model
       'transaction_type' => TransactionType::class
    ];
 
-   public static $rules = array(
-      'amount' => 'integer|required|min:0',
-      'transaction_date' => 'required',
-      'category_ids' => 'array|required',
-      'category_ids.*' => 'exists:categories,id',
-      'income' => 'required',
-      'payment_method_id' => 'required|exists:payment_methods,id',
-      'note' => 'max:100'
-   );
-
    protected $fillable = [
       'amount',
       'transaction_date',

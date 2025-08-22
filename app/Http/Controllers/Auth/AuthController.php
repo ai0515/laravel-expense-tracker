@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Http\Requests\UserRequest;
 
 class AuthController extends Controller
 {
@@ -41,12 +42,9 @@ class AuthController extends Controller
         return view('transactions.register');
     }
 
-    public function createUser(Request $request)
+    public function createUser(UserRequest $request)
     {
-        $validated = $request->validate([
-            'email'    => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
-            'password' => ['required', 'string', 'min:8', 'confirmed']
-        ]);
+        $validated = $request->validated();
 
         $user = User::create([
             'email'    => $validated['email'],

@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\PaymentMethod;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\TransactionRequest;
 
 class TransactionController extends Controller
 {
@@ -27,9 +28,9 @@ class TransactionController extends Controller
     }
 
     // 収支データ登録
-    public function store(Request $request)
+    public function store(TransactionRequest $request)
     {
-        $data = $request->validate(Transaction::$rules);
+        $data = $request->validated();
         $data['user_id'] = Auth::user()->id;
         $data['transaction_type'] = TransactionType::boolToEnum($request->boolean('income'));
 
@@ -52,9 +53,9 @@ class TransactionController extends Controller
     }
 
     // 収支データ更新
-    public function update(Request $request, $id)
+    public function update(TransactionRequest $request, $id)
     {
-        $data = $request->validate(Transaction::$rules);
+        $data = $request->validated();
         $data['transaction_type'] = TransactionType::boolToEnum($request->boolean('income'));
 
         $transaction = Transaction::with('categories')->findOrFail($id);
