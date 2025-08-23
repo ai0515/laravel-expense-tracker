@@ -19,10 +19,6 @@ class TestDataSeeder extends Seeder
         ]);
 
         $this->call([
-            // マスタデータ（カテゴリー、支払い方法）
-            PaymentMethodSeeder::class,
-            CategorySeeder::class,
-
             // サンプル収支データの登録
             SampleDataSeeder::class,
         ]);
