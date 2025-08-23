@@ -2,22 +2,26 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-
-use App\Enums\TransactionType;
-use App\Models\Transaction;
+use App\Models\User;
 use App\Models\PaymentMethod;
 use App\Models\Category;
-use App\Models\User;
+use App\Models\Transaction;
+use App\Enums\TransactionType;
 
-class SampleDataSeeder extends Seeder
+class TestDataSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
+        // User::factory(10)->create();
+        $user = User::factory()->create([
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+        ]);
+
         $user = User::first();
 
         //出金データの登録
@@ -27,6 +31,7 @@ class SampleDataSeeder extends Seeder
         $transaction = Transaction::factory()
             ->for($user, 'user')
             ->for($paymentMethod, 'paymentMethod')
+            ->state(['amount' => 1000])
             ->state(['note' => 'コンビニ'])
             ->state(['transaction_type' => TransactionType::PAYMENT])
             ->create();
@@ -39,6 +44,7 @@ class SampleDataSeeder extends Seeder
         $transaction = Transaction::factory()
             ->for($user, 'user')
             ->for($paymentMethod, 'paymentMethod')
+            ->state(['amount' => 20000])
             ->state(['note' => 'アルバイト'])
             ->state(['transaction_type' => TransactionType::INCOME])
             ->create();
