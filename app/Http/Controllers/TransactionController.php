@@ -38,7 +38,7 @@ class TransactionController extends Controller
         $transaction->categories()->attach($request->category_ids);
         $transaction->save();
 
-        return redirect('/transactions');
+        return redirect('/transactions')->with('success', '登録しました。');
     }
 
     // 収支データ編集画面表示
